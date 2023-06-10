@@ -63,6 +63,32 @@
     }
 /* END CSS Reset */
 
+/* Colors */
+:root {
+    --clr-reaction: hsl(0, 100%, 67%);
+    --clr-memory: hsl(39, 100%, 56%);
+    --clr-verbal: hsl(166, 100%, 37%);
+    --clr-visual: hsl(234, 85%, 45%);
+
+    --clr-main-bg1: hsl(252, 100%, 67%);
+    --clr-main-bg2: hsl(241, 81%, 54%);
+
+    --clr-circle-bg1: hsla(256, 72%, 46%, 1);
+    --clr-circle-bg2: hsla(241, 72%, 46%, 0);
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-pale-blue: hsl(221, 100%, 96%);
+    --clr-lavender: hsl(241, 100%, 89%);
+    --clr-dark-grey-blue: hsl(224, 30%, 27%);
+
+    --ff-primary: 'Hanken Grotesk', sans-serif;
+    --ff-body: var(--ff-primary);
+    --fw-regular: 500;
+    --fw-semi-bold: 700;
+    --fw-bold: 800;
+    --fs-paragraph: 1.125rem;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
