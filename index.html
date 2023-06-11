@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Results summary component</title>
- 
+
   <link rel="stylesheet" href="css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
-
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  <main class="container">
+    <div class="result-section">
+      <h1 class="your-result result-columns">Your Result</h1>
+      <div class="circle result-columns">
+        <p class="total-score">76</p>
+        <p class="total-possible">of 100</p>
+      </div>
+      
+      <p class="evaluation result-columns">Great</p>
+      <p class="comparison result-columns">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="summary-section">
+      <h2 class="summary">Summary</h2>
+      <div class="reaction">
+        <img src="assets/images/icon-reaction.svg" alt="lighting bolt icon"/>
+        <p>Reaction</p>
+        <p>80 / 100</p>
+      </div>
+      <div class="memory">
+        <img src="assets/images/icon-memory.svg" alt="lighting bolt icon"/>
+        <p>Memory</p>
+        <p>92 / 100</p>
+      </div>
+      <div class="verbal">
+        <img src="assets/images/icon-verbal.svg" alt="lighting bolt icon"/>
+        <p>Verbal</p>
+        <p>61 / 100</p>
+      </div>
+      <div class="visual">
+        <img src="assets/images/icon-visual.svg" alt="lighting bolt icon"/>
+        <p>Visual</p>
+        <p>72 / 100</p>
+      </div>
+      <button class="continue" type="button">
+        Continue
+      </button>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Ted Rinquest</a>.
-  </div>
+  </footer>
 </body>
+
 </html>
