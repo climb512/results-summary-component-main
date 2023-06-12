@@ -1,3 +1,5 @@
+/* "A Modern CSS Reset" by Andy Bell
+ https://piccalil.li/blog/a-modern-css-reset */
 /* Box sizing rules */
 *,
 *::before,
@@ -58,36 +60,9 @@ select {
   }
 }
 
-/* Colors */
-:root {
-    --clr-reaction: hsl(0, 100%, 67%);
-    --clr-memory: hsl(39, 100%, 56%);
-    --clr-verbal: hsl(166, 100%, 37%);
-    --clr-visual: hsl(234, 85%, 45%);
-
-    --clr-main-bg1: hsl(252, 100%, 67%);
-    --clr-main-bg2: hsl(241, 81%, 54%);
-
-    --clr-circle-bg1: hsla(256, 72%, 46%, 1);
-    --clr-circle-bg2: hsla(241, 72%, 46%, 0);
-
-    --clr-white: hsl(0, 0%, 100%);
-    --clr-pale-blue: hsl(221, 100%, 96%);
-    --clr-lavender: hsl(241, 100%, 89%);
-    --clr-dark-lavender: hsl(245, 100%, 75%);
-    --clr-dark-grey-blue: hsl(224, 30%, 27%);
-
-    --ff-primary: 'Hanken Grotesk', sans-serif;
-    --ff-body: var(--ff-primary);
-    --fw-regular: 500;
-    --fw-semi-bold: 700;
-    --fw-bold: 800;
-    --fs-paragraph: 1.125rem;
-}
-
 body {
-    font-family: var(--ff-body);
-    font-size: var(--fs-paragraph);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 1.125rem;
     margin: 0;
 }
 
@@ -105,7 +80,7 @@ body {
 }
 
 .result-section {
-    background-image: linear-gradient(var(--clr-main-bg1), var(--clr-main-bg2));
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     border-end-start-radius: 30px;
     border-end-end-radius: 30px;
     min-height: 480px;
@@ -120,38 +95,38 @@ body {
 }
 
 .your-result  {
-    color: var(--clr-lavender);
-    font-size: var(--fs-paragraph);
+    color: hsl(241, 100%, 89%);
+    font-size: 1.125rem;
 }
 
 .circle {
-    background-image: linear-gradient(var(--clr-circle-bg1), var(--clr-circle-bg2));
+    background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
     border-radius: 50%;
     margin: 10px 12%;
 }
 
 .total-score {
-    color: var(--clr-white);
+    color: hsl(0, 0%, 100%);
     font-size: 4rem;
-    font-weight: var(--fw-bold);
+    font-weight: 800;
     margin-top: 30px;
     margin-bottom: 0;
 }
 
 .total-possible {
-    color: var(--clr-dark-lavender);
+    color: hsl(245, 100%, 75%);
     margin-top: 0px;
     margin-bottom: 30px;
 }
 
 .evaluation {
-    color: var(--clr-white);
+    color: hsl(0, 0%, 100%);
     font-size: 1.625rem;
     margin: 10px;
 }
 
 .comparison {
-    color: var(--clr-lavender);
+    color: hsl(241, 100%, 89%);
     font-size: .9rem;
 }
 /* ------------ */
@@ -164,7 +139,7 @@ body {
 
 .summary {
     color: black;
-    font-size: var(--fs-paragraph);
+    font-size: 1.125rem;
 }
 
 .card {
@@ -191,7 +166,7 @@ body {
 
 .score {
     color: black;
-    font-weight: var(--fw-bold);  
+    font-weight: 800;  
     grid-area: C;
 }
 
@@ -200,30 +175,31 @@ body {
 }
 
 .reaction {
-    color: var(--clr-reaction);
+    color: hsl(0, 100%, 67%);
     background-color: hsla(0, 100%, 67%, 0.07);
 }
 
 .memory {
-    color: var(--clr-memory);
+    color: hsl(39, 100%, 56%);
     background-color: hsla(39, 100%, 56%, 0.07);
 }
 
 .verbal {
-    color: var(--clr-verbal);
+    color: hsl(166, 100%, 37%);
     background-color: hsla(166, 100%, 37%, 0.07);
 }
 
 .visual {
-    color: var(--clr-visual);
+    color: hsl(234, 85%, 45%);
     background-color: hsla(234, 85%, 45%, 0.07);
 }
 
+/* button styling initially from https://getcssscan.com/css-buttons-examples */
 .continue {
     flex-basis: 100%;
-    background-color: var(--clr-dark-grey-blue);
-    color: var(--clr-white);
-    font-size: var(--fs-paragraph);
+    background-color: hsl(224, 30%, 27%);
+    color: hsl(0, 0%, 100%);
+    font-size: 1.125rem;
     width: 100%;
     border: 1px;
     border-radius: 25px;
@@ -240,7 +216,7 @@ body {
 }
 
 .continue:hover, .continue:focus {
-    background-image: linear-gradient(var(--clr-main-bg1), var(--clr-main-bg2));
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
 @media (min-width: 650px) {
@@ -280,7 +256,7 @@ body {
     }
     
     .comparison {
-        color: var(--clr-lavender);
+        color: hsl(241, 100%, 89%);
         font-size: 1.125rem;
     }
 
@@ -300,7 +276,7 @@ body {
         border-start-end-radius: 30px;
         border-end-start-radius: 30px;
         border-end-end-radius: 30px;
-        box-shadow: 20px 25px 20px  hsl(222, 100%, 98%);
+        box-shadow: 15px 25px 20px  hsl(220, 79%, 96%);
     }
 }
 
