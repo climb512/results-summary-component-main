@@ -1,3 +1,63 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html, body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img, picture, svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Colors */
 :root {
     --clr-reaction: hsl(0, 100%, 67%);
@@ -32,8 +92,14 @@ body {
 }
 
 .container {
-    width:353px;
+    width:375px;
+    margin: auto;
     padding: 0;
+    display: flex;
+    flex-flow: row wrap; 
+}
+
+.shadow {
     display: flex;
     flex-flow: row wrap; 
 }
@@ -42,7 +108,7 @@ body {
     background-image: linear-gradient(var(--clr-main-bg1), var(--clr-main-bg2));
     border-end-start-radius: 30px;
     border-end-end-radius: 30px;
-    min-height: 300px;
+    min-height: 480px;
     padding: 15px 65px;
     display: flex;
     flex-flow: row wrap;
@@ -61,7 +127,7 @@ body {
 .circle {
     background-image: linear-gradient(var(--clr-circle-bg1), var(--clr-circle-bg2));
     border-radius: 50%;
-    margin: 10px 15%;
+    margin: 10px 12%;
 }
 
 .total-score {
@@ -86,12 +152,12 @@ body {
 
 .comparison {
     color: var(--clr-lavender);
-    font-size: .875rem;
+    font-size: .9rem;
 }
 /* ------------ */
 .summary-section {
+    font-size: 1rem;
     padding: 15px 35px;
-    font-size: var(--fs-paragraph);
     display: flex;
     flex-flow: row wrap;
 }
@@ -101,68 +167,141 @@ body {
     font-size: var(--fs-paragraph);
 }
 
-.reaction {
+.card {
     flex-basis: 100%;
-    color: var(--clr-reaction);
-    background-color: hsla(0, 100%, 67%, 0.07);
     height: 45px;
     border-radius: 10px;
     margin-block-start: 8px;
     margin-block-end: 8px;
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    display:grid;
+    gap: 4px;
+    grid-template-areas: 
+    "A B C C   C C C C   C C C D";
+    justify-items: end;
+    align-items: center;
+}
+
+.icon {
+    grid-area: A;
+}
+
+.mode {
+    grid-area: B;
+}
+
+.score {
+    color: black;
+    font-weight: var(--fw-bold);  
+    grid-area: C;
+}
+
+.grey {
+    color: #a5a5a5;
+}
+
+.reaction {
+    color: var(--clr-reaction);
+    background-color: hsla(0, 100%, 67%, 0.07);
 }
 
 .memory {
-    flex-basis: 100%;
     color: var(--clr-memory);
     background-color: hsla(39, 100%, 56%, 0.07);
-    height: 45px;
-    border-radius: 10px;
-    margin-block-start: 8px;
-    margin-block-end: 8px;
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
 }
 
 .verbal {
-    flex-basis: 100%;
     color: var(--clr-verbal);
     background-color: hsla(166, 100%, 37%, 0.07);
-    height: 45px;
-    border-radius: 10px;
-    margin-block-start: 8px;
-    margin-block-end: 8px;
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
 }
 
 .visual {
-    flex-basis: 100%;
     color: var(--clr-visual);
     background-color: hsla(234, 85%, 45%, 0.07);
-    height: 45px;
-    border-radius: 10px;
-    margin-block-start: 8px;
-    margin-block-end: 8px;
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
 }
 
 .continue {
     flex-basis: 100%;
     background-color: var(--clr-dark-grey-blue);
     color: var(--clr-white);
+    font-size: var(--fs-paragraph);
     width: 100%;
     border: 1px;
-    padding: 10px;
-    border-radius: 25%;
+    border-radius: 25px;
     margin-block-start: 8px;
     margin-block-end: 8px;
+    margin-top: 16px;
+    cursor: pointer;  
+    align-items: center;
+    min-height: 52px;
+    overflow: hidden;
+    padding: 0px;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.continue:hover, .continue:focus {
+    background-image: linear-gradient(var(--clr-main-bg1), var(--clr-main-bg2));
+}
+
+@media (min-width: 650px) {
+    .container {
+        height: 100dvh;
+        width: 650px;
+        padding: 0; 
+        align-items: center;
+    }
+
+    .result-section {
+        flex-basis:50%;
+        width:370px;
+        padding: 15px 35px;
+        border-start-start-radius: 30px;
+        border-start-end-radius: 30px;
+    }
+
+    .summary-section {
+        flex-basis:50%;
+        width:370px;
+
+    }
+
+    .your-result {
+        font-size: 1.5rem;
+    }
+
+    .total-score {
+        font-size: 4.5rem;
+    }
+
+    .evaluation {
+        font-size: 1.9375rem;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    
+    .comparison {
+        color: var(--clr-lavender);
+        font-size: 1.125rem;
+    }
+
+    .summary-section {
+        font-size: 1.125rem;
+    }
+    .summary {
+        font-size: 1.675rem;
+    }
+
+    .card {
+        height: 55px;
+    }
+
+    .shadow {
+        border-start-start-radius: 30px;
+        border-start-end-radius: 30px;
+        border-end-start-radius: 30px;
+        border-end-end-radius: 30px;
+        box-shadow: 20px 25px 20px  hsl(222, 100%, 98%);
+    }
 }
 
 .attribution {
