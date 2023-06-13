@@ -15,6 +15,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 
+  <script type="text/javascript">
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "data.json", true);
+    xmlHttp.addEventListener("load", ajaxCallback, false);
+    xmlHttp.send(null);
+    function ajaxCallback(event){
+      var json = JSON.parse(event.target.responseText);
+      json.forEach(e => {
+        const elem = document.getElementById(e.category);
+        const elemIcon = elem.getElementsByTagName("img")[0];
+        elemIcon.setAttribute('src', e.icon);
+        const elemMode = elem.getElementsByClassName("mode")[0];
+        elemMode.innerHTML = e.category;
+        const elemScore = elem.getElementsByClassName("score")[0];
+        elemScore.innerHTML = e.score + '<span class="grey"> / 100</span>';
+        })
+      }
+  </script>
+
 </head>
 
 <body>
@@ -31,25 +50,25 @@
       </div>
       <div class="summary-section">
         <h2 class="summary">Summary</h2>
-        <div class="reaction card">
-          <img class="icon" src="assets/images/icon-reaction.svg" alt="lighting bolt icon"/>
-          <div class="mode">Reaction</div>
-          <div class="score">80<span class="grey"> / 100</span></div>
+        <div class="reaction card" id="Reaction">
+          <img class="icon" src="#" alt="lighting bolt icon"/>
+          <div class="mode"></div>
+          <div class="score"></div>
         </div>
-        <div class="memory card">
-          <img class="icon" src="assets/images/icon-memory.svg" alt="memory icon"/>
-          <div class="mode">Memory</div>
-          <div class="score">92<span class="grey"> / 100</span></div>
+        <div class="memory card" id="Memory">
+          <img class="icon" src="#" alt="memory icon"/>
+          <div class="mode"></div>
+          <div class="score"></div>
         </div>
-        <div class="verbal card">
-          <img class="icon" src="assets/images/icon-verbal.svg" alt="verbal icon"/>
-          <div class="mode">Verbal</div>
-          <div class="score">61<span class="grey"> / 100</span></div>
+        <div class="verbal card" id="Verbal">
+          <img class="icon" src="#" alt="verbal icon"/>
+          <div class="mode"></div>
+          <div class="score"></span></div>
         </div>
-        <div class="visual card">
-          <img class="icon" src="assets/images/icon-visual.svg" alt="visual icon"/>
-          <div class="mode">Visual</div>
-          <div class="score">72<span class="grey"> / 100</span></div>
+        <div class="visual card" id="Visual">
+          <img class="icon" src="#" alt="visual icon"/>
+          <div class="mode"></div>
+          <div class="score"></span></div>
         </div>
         <button class="continue" type="button">
           Continue

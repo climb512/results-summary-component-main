@@ -1,3 +1,4 @@
+ /* ---start--- */
 /* "A Modern CSS Reset" by Andy Bell
  https://piccalil.li/blog/a-modern-css-reset */
 /* Box sizing rules */
@@ -59,7 +60,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
+ /* ---end--- */
 body {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.125rem;
@@ -219,7 +220,7 @@ body {
     background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
-@media (min-width: 650px) {
+@media (min-width: 670px) {
     .container {
         height: 100dvh;
         width: 650px;
